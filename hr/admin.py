@@ -1,3 +1,6 @@
 from django.contrib import admin
+from hr.models import Employee, Leave, Salary
 
-# Register your models here.
+admin.site.register(Employee)
+admin.site.register(Leave)
+admin.site.register(Salary)

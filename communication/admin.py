@@ -1,3 +1,5 @@
 from django.contrib import admin
+from communication.models import Announcement, Message
 
-# Register your models here.
+admin.site.register(Message)
+admin.site.register(Announcement)

@@ -5,6 +5,7 @@ class User(AbstractUser):
     class Roles(models.TextChoices):
         ADMIN = 'ADMIN', 'Administrateur système'
         DIRECTOR = 'DIRECTOR', 'Direction'
+        DHR = 'DIRECTOR HR', 'Directeur RH'
         STAFF = 'STAFF', 'Personnel administratif'
         TEACHER = 'TEACHER', 'Enseignant'
         STUDENT = 'STUDENT', 'Étudiant'
@@ -35,3 +36,6 @@ class UserDocument(models.Model):
     title = models.CharField(max_length=200)
     file = models.FileField(upload_to='documents/')
     uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name='Document'

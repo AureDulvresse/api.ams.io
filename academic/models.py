@@ -7,6 +7,9 @@ class AcademicYear(models.Model):
     end_date = models.DateField()
     is_current = models.BooleanField(default=False)
 
+    def __str__(self):
+        return self.name
+
 class ClassGroup(models.Model):
     name = models.CharField(max_length=100)
     academic_year = models.ForeignKey(AcademicYear, on_delete=models.CASCADE)

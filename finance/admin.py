@@ -1,3 +1,6 @@
 from django.contrib import admin
+from finance.models import Account, SchoolFee, Transaction
 
-# Register your models here.
+admin.site.register(Account)
+admin.site.register(Transaction)
+admin.site.register(SchoolFee)

@@ -24,3 +24,6 @@ class Salary(models.Model):
     deductions = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     payment_date = models.DateField()
     is_paid = models.BooleanField(default=False)
+
+    class Meta:
+        verbose_name_plural = 'Salaries'

@@ -1,3 +1,5 @@
 from django.contrib import admin
+from schedule.models import Room, ScheduleEntry
 
-# Register your models here.
+admin.site.register(Room)
+admin.site.register(ScheduleEntry)
