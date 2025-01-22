@@ -240,7 +240,7 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': True,
-    'UPDATE_LAST_LOGIN': False,
+    'UPDATE_LAST_LOGIN': True,
     'ALGORITHM': 'HS256',
     'SIGNING_KEY': SECRET_KEY,
     'VERIFYING_KEY': None,
@@ -279,7 +279,7 @@ CELERY_TIMEZONE = TIME_ZONE
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
-    'formatters': {
+    'formatters': { 
         'verbose': {
             'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
             'style': '{',
