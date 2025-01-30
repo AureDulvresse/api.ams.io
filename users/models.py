@@ -26,10 +26,20 @@ class User(AbstractUser):
     is_blocked = models.BooleanField(default=False)
     is_email_verified = models.BooleanField(default=False)
     email_verification_token = models.CharField(max_length=255, null=True, blank=True)
-    
+    password_reset_token = models.CharField(max_length=255, null=True, blank=True)
+    password_reset_expires = models.DateTimeField(null=True, blank=True)
+    notification_preferences = models.JSONField(default=dict)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
+
+    def get_notification_settings(self):
+        default_settings = {
+            'email_notifications': True,
+            'security_alerts': True,
+            'news_updates': False
+        }
+        return {**default_settings, **self.notification_preferences}
 
 class UserDocument(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
